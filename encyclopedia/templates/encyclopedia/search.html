@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+	Search results
+{% endblock %}
+
+{% block body %}
+	<h1>Entry "{{ input }}" not found! Search results for "{{ input }}":</h1>
+
+	<ul>
+		{% for entry in entries %}
+			<li><a href="{% url 'encyclopedia:entry' entry %}">{{ entry }}</a></li>
+		{% endfor %}
+	</ul>
+{% endblock %}
